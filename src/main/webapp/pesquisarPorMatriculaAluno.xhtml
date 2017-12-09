@@ -1,0 +1,47 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Trabalho 7 PC3 Rafael Araujo</title>
+</h:head>
+<h:body>
+	<p:breadCrumb style="margin-bottom:30px;">
+		<p:menuitem value="Home" url="index.jsf" />
+		<p:menuitem value="Listar" url="index.jsf" />
+		<p:menuitem value="Inserir" url="inserirAluno.jsf" />
+		<p:menuitem value="Editar" url="editarAluno.jsf" />
+		<p:menuitem value="Deletar" url="deletarAluno.jsf" />
+		<p:menuitem value="Pesquisar por matrícula" url="#" />
+	</p:breadCrumb>
+	
+	<h:form id="form">
+		<p:panel header="Trabalho 7 pc3: Pesquisando alunos por matrícula" id="panel"
+			style="margin-bottom:10px;">
+			<p:panelGrid columns="2" cellpadding="5">
+				<p:outputLabel value="Matrícula:" for="matricula" />
+				<p:spinner id="matricula" size="50" required="true"
+					value="#{alunoController.matricula}" />
+			</p:panelGrid>
+		</p:panel>
+		<p:commandButton value="Pesquisar aluno"
+			actionListener="#{alunoController.findAluno}" update="Resposta" />
+		
+		<p:panel id="Resposta">
+		<p:panelGrid columns="2">
+		<p:outputLabel value="Matricula: " for="aMatricula"/>
+		<p:outputLabel value="#{alunoController.matricula}" id="aMatricula"/>
+		
+		<p:outputLabel value="Nome:" for="nome"/>
+		<p:outputLabel value="#{alunoController.nome}" id="nome"/>
+		
+		<p:outputLabel value="RA:" for="ra"/>
+		<p:outputLabel value="#{alunoController.ra}" id="ra"/>
+	</p:panelGrid>
+	</p:panel>
+	</h:form>
+</h:body>
+</html>

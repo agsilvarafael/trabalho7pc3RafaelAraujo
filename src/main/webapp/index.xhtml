@@ -1,0 +1,38 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Trabalho 7 pc3 Rafael Araujo</title>
+</h:head>
+<h:body>
+	<p:breadCrumb style="margin-bottom:30px;">
+		<p:menuitem value="Home" url="#" />
+		<p:menuitem value="Listar" url="#" />
+		<p:menuitem value="Inserir" url="inserirAluno.jsf" />
+		<p:menuitem value="Editar" url="editarAluno.jsf" />
+		<p:menuitem value="Deletar" url="deletarAluno.jsf" />
+		<p:menuitem value="Pesquisar por matrícula" url="pesquisarPorMatriculaAluno.jsf" />
+	</p:breadCrumb>
+
+	<p:panel header="Trabalho 7 pc3: Listar Alunos" id="panel"
+		style="margin-bottom:10px;">
+		<p:dataTable var="aluno" value="#{alunoController.alunos}">
+			<p:column headerText="Matrícula" style="width:80px;">
+				<h:outputText value="#{aluno.matricula}" />
+			</p:column>
+
+			<p:column headerText="Nome" style="max-width:80%;">
+				<h:outputText value="#{aluno.nome}" />
+			</p:column>
+
+			<p:column headerText="Região Administrativa" style="width:200px;">
+				<h:outputText value="#{aluno.ra}" />
+			</p:column>
+		</p:dataTable>
+	</p:panel>
+</h:body>
+</html>
